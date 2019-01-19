@@ -19,3 +19,7 @@ end
 get '/about' do
 	erb :about		
 end
+
+get '/contacts' do
+	erb :contacts		
+end
