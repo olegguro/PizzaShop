@@ -20,8 +20,6 @@
     <% total_price += item[0].price * item[1].to_i %>
     <% total_quantity += item[1].to_i %>
     <% end %>
-
-
  <tr>
       <td>Total: </td>
       <td><%= total_price %></td>
@@ -29,3 +27,24 @@
    </tr>
   </tbody>
 </table>
+
+<form action="/place_order" method="POST" role="form">
+
+  <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>"/>
+
+  <div class="form-group">
+    <label>Name:</label>
+    <input name="order" type="text" class="form-control" placeholder="Your name">
+  </div>
+
+<div class="form-group">
+    <label>Phone:</label>
+    <input name="order[phone]" type="text" class="form-control" placeholder="Your phone">
+  </div>
+
+<div class="form-group">
+    <label>Delivery address:</label>
+    <textarea name="order[address]" class="form-control" placeholder="Delivery address"></textarea>
+  </div>
+<button type="submit" class="btn btn-success btn-lg"> Place this order </button>
+</form>
