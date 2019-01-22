@@ -22,6 +22,11 @@ get '/about' do
 	erb :about		
 end
 
+post '/place_order' do
+	@order = Order.create params[:order]
+	erb :order_placed	
+end
+
 get '/contacts' do
 	erb :contacts		
 end
@@ -34,8 +39,6 @@ post '/cart' do
 		# id, cnt
 		item[0] = Product.find(item[0])
 	end
-
-	@o = []
 
 	erb :cart
 end
