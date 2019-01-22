@@ -82,5 +82,7 @@ function cancel_order()
 	update_orders_input();
 	 update_order_button ();
 
+	 $('#cart').text ('Your cart is empty now!')
+
 	return false;
 }
